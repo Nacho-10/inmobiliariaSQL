@@ -71,5 +71,44 @@ CREATE TABLE Contratos (
     FOREIGN KEY (PropiedadID) REFERENCES Propiedades(PropiedadID),
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID)
 );
-
+CREATE OR REPLACE VIEW VistaInmobiliaria AS
+SELECT
+    A.AgenteID,
+    A.NombreCompleto AS NombreAgente,
+    A.Email AS EmailAgente,
+    A.Telefono AS TelefonoAgente,
+    P.PropiedadID,
+    P.TipoDePropiedad,
+    P.Direccio AS DireccionPropiedad, -- Corregí la columna "Direccio" a "DireccionPropiedad"
+    P.Precio,
+    C.ClienteID,
+    C.NombreCompleto AS NombreCliente,
+    C.Email AS EmailCliente,
+    C.Telefono AS TelefonoCliente
+FROM
+    Agentes A
+    INNER JOIN Propiedades P ON A.AgenteID = P.AgenteID
+    INNER JOIN Clientes C ON P.PropiedadID = C.ClienteID;
+    
+    CREATE OR REPLACE VIEW VistaInmobiliaria AS
+SELECT
+    P.PropiedadID,
+    P.TipoDePropiedad,
+    P.Direccio AS DireccionPropiedad, -- Corregí la columna "Direccio" a "DireccionPropiedad"
+    P.Precio,
+    V.VisitaID,
+    V.FechaVisita,
+    C.ClienteID,
+    C.NombreCompleto AS NombreCliente,
+    C.Email AS EmailCliente,
+    C.Telefono AS TelefonoCliente,
+    A.AgenteID,
+    A.NombreCompleto AS NombreAgente,
+    A.Email AS EmailAgente,
+    A.Telefono AS TelefonoAgente
+FROM
+    Propiedades P
+    INNER JOIN Visitas V ON P.PropiedadID = V.PropiedadID
+    INNER JOIN Clientes C ON V.ClienteID = C.ClienteID
+    INNER JOIN Agentes A ON P.AgenteID = A.AgenteID;
 
