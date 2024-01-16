@@ -1,0 +1,23 @@
+﻿Instrucciones de Instalación para el Sistema Inmobiliario.
+Para iniciar la instalación del sistema inmobiliario, sigue estos sencillos pasos:
+* Descargar y Descomprimir:
+   * Descarga el archivo comprimido que contiene los archivos del sistema inmobiliario.
+   * Descomprime la carpeta en una ubicación accesible en tu computadora.
+* Ejecutar el Script de Creación:
+   * Abre la herramienta de administración de bases de datos y ejecuta el script denominado "1. CREACIÓN SCHEMA, TABLAS, TABLAS AUDITORIA, LOG, TRIGGERS, POB DE TABLAS.sql".
+   * Este script creará el esquema principal, las tablas con claves primarias y foráneas, tablas de auditoría y log, así como los triggers asociados.
+   * Asegúrate de realizar la inserción de datos utilizando los archivos CSV proporcionados en la carpeta "TABLAS INMOBILIARIA", siguiendo el orden especificado para las tablas.
+* Ejecutar el Script de Vistas:
+   * Ejecuta el script "2. VIEWS INMOBILIARIA.sql" para crear las vistas necesarias para el sistema.
+* Ejecutar el Script de Funciones:
+   * Ejecuta el script "3. FUNCIONES INMOBILIARIA.sql" para generar las funciones requeridas por el sistema.
+* Ejecutar el Script de Stored Procedures:
+   * Ejecuta el script "4. STORED PROCEDURE INMOBILIARIA.sql" para crear los Stored Procedures necesarios, incluyendo uno para ordenar y otro para insertar/eliminar.
+* Ejecutar el Script de Sentencias (DCL):
+   * Ejecuta el script "5. SENTENCIAS (DCL) INMOBILIARIA.sql" para generar usuarios con los permisos necesarios.
+* Ejecutar el Script de Transacciones (TCL):
+   * Ejecuta el script "6. TCL INMOBILIARIA.sql" para realizar transacciones como eliminación de registros e inserción con el uso de COMMIT, ROLLBACK y SAVEPOINT. Asegúrate de revisar que estén comentados antes de ejecutarlos.
+* Finalizar la Instalación:
+   * Con la ejecución de los scripts anteriores, habrás completado la instalación del sistema inmobiliario.
+* Realizar Backup (Opcional):
+   * Si lo deseas, puedes realizar un respaldo de los datos ejecutando el script "7. BACKUP INMOBILIARIA.sql".
