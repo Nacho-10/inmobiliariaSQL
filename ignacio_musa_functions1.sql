@@ -1,3 +1,5 @@
+DELIMITER //
+
 CREATE FUNCTION ContarReservasPorPropiedad(propiedadID INT)
 RETURNS INT
 DETERMINISTIC
@@ -9,4 +11,6 @@ BEGIN
     WHERE PropiedadID = propiedadID;
 
     RETURN numReservas;
-END;
+END //
+
+DELIMITER ;

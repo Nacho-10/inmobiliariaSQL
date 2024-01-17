@@ -1,3 +1,5 @@
+DELIMITER //
+
 CREATE FUNCTION ObtenerPrecioPromedioPorTipo(tipoPropiedad VARCHAR(50))
 RETURNS DECIMAL(10, 2)
 DETERMINISTIC
@@ -9,4 +11,6 @@ BEGIN
     WHERE TipoDePropiedad = tipoPropiedad;
 
     RETURN precioPromedio;
-END;
+END //
+
+DELIMITER ;

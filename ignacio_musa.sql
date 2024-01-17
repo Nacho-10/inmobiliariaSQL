@@ -79,7 +79,7 @@ SELECT
     A.Telefono AS TelefonoAgente,
     P.PropiedadID,
     P.TipoDePropiedad,
-    P.Direccion AS DireccionPropiedad, -- Corregí la columna "Direccio" a "DireccionPropiedad"
+    P.Direccion AS DireccionPropiedad, 
     P.Precio,
     C.ClienteID,
     C.NombreCompleto AS NombreCliente,
@@ -94,7 +94,7 @@ FROM
 SELECT
     P.PropiedadID,
     P.TipoDePropiedad,
-    P.Direccion AS DireccionPropiedad, -- Corregí la columna "Direccio" a "DireccionPropiedad"
+    P.Direccion AS DireccionPropiedad,
     P.Precio,
     V.VisitaID,
     V.FechaVisita,
